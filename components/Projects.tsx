@@ -1,23 +1,24 @@
+// src/components/Projects.tsx
 import React from 'react';
 
-const projects = [
-  { name: 'Project 1', url: 'https://github.com/KarimSasa/project1' },
-  { name: 'Project 2', url: 'https://github.com/KarimSasa/project2' },
-];
-
-const Projects = () => (
-  <section>
-    <h1>My Projects</h1>
-    <ul>
-      {projects.map((project) => (
-        <li key={project.name}>
-          <a href={project.url} target="_blank" rel="noopener noreferrer">
-            {project.name}
+const Projects = () => {
+  return (
+    <section className="projects">
+      <h2>My Projects</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/KarimSasa/Projects" target="_blank" rel="noopener noreferrer">
+            Projects Repository
           </a>
         </li>
-      ))}
-    </ul>
-  </section>
-);
+        <li>
+          <a href="https://github.com/KarimSasa/DataMining" target="_blank" rel="noopener noreferrer">
+            Data Mining Project
+          </a>
+        </li>
+      </ul>
+    </section>
+  );
+};
 
 export default Projects;
