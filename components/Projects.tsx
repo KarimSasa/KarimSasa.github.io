@@ -37,7 +37,7 @@ const Projects = () => {
           <h3>Project 1: Data Mining</h3>
           <div>
             <a
-              href="../public/Project_1_Karim_Sasa.pdf"
+              href="/Project_1_Karim_Sasa.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="project-button"
@@ -45,7 +45,7 @@ const Projects = () => {
               Open PDF
             </a>
             <a
-              href="../public/Project_1.html"
+              href="/Project_1.html"
               target="_blank"
               rel="noopener noreferrer"
               className="project-button"
