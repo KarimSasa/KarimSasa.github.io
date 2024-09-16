@@ -54,3 +54,39 @@ body {
     background-color: #005582;
   }
   
+  /* src/styles.css */
+
+
+  .project-button {
+    background-color: #008CBA; /* Blue */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 10px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .project-button:hover {
+    background-color: #007B9A; /* Darker blue on hover */
+  }
+
+  .document-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .projects {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  
