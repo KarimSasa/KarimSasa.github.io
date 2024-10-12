@@ -1,23 +1,28 @@
 import React, { useState } from 'react';
 
 const Projects = () => {
-  const [showDataMiningOptions, setShowDataMiningOptions] = useState(false);
-  const [currentProject, setCurrentProject] = useState(null);
+  const [showProject1, setShowProject1] = useState(false);
+  const [showProject2, setShowProject2] = useState(false);
 
-  const handleShowProject = (project) => {
-    setCurrentProject(project);
-    setShowDataMiningOptions(true);
+  const handleShowProject1 = () => {
+    setShowProject1(true);
+    setShowProject2(false);
+  };
+
+  const handleShowProject2 = () => {
+    setShowProject2(true);
+    setShowProject1(false);
   };
 
   const handleBackToProjects = () => {
-    setShowDataMiningOptions(false);
-    setCurrentProject(null);
+    setShowProject1(false);
+    setShowProject2(false);
   };
 
   return (
     <section className="projects">
       <h2>My Projects</h2>
-      {!showDataMiningOptions ? (
+      {!showProject1 && !showProject2 ? (
         <ul>
           <li>
             <a
@@ -30,69 +35,62 @@ const Projects = () => {
             </a>
           </li>
           <li>
-            <button
-              onClick={() => handleShowProject("Project 1")}
-              className="project-button"
-            >
+            <button onClick={handleShowProject1} className="project-button">
               Project 1: Data Mining
             </button>
           </li>
           <li>
-            <button
-              onClick={() => handleShowProject("Project 2")}
-              className="project-button"
-            >
+            <button onClick={handleShowProject2} className="project-button">
               Project 2: Data Mining
             </button>
           </li>
         </ul>
+      ) : showProject1 ? (
+        <div className="document-section">
+          <h3>Project 1: Data Mining</h3>
+          <div>
+            <a
+              href="Project_1_Karim_Sasa.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-button"
+            >
+              Open PDF
+            </a>
+            <a
+              href="Project_1.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-button"
+            >
+              Open HTML
+            </a>
+          </div>
+          <button onClick={handleBackToProjects} className="project-button">
+            Back to Projects
+          </button>
+        </div>
       ) : (
         <div className="document-section">
-          {currentProject === "Project 1" ? (
-            <>
-              <h3>Project 1: Data Mining</h3>
-              <div>
-                <a
-                  href="Project_1_Karim_Sasa.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-button"
-                >
-                  Open PDF
-                </a>
-                <a
-                  href="Project_1.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-button"
-                >
-                  Open HTML
-                </a>
-              </div>
-            </>
-          ) : (
-            <>
-              <h3>Project 2: Data Mining</h3>
-              <div>
-                <a
-                  href="Project_2_Karim_Sasa_final.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-button"
-                >
-                  Open PDF
-                </a>
-                <a
-                  href="Project_2.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-button"
-                >
-                  Open HTML
-                </a>
-              </div>
-            </>
-          )}
+          <h3>Project 2: Data Mining</h3>
+          <div>
+            <a
+              href="Project_2_Karim_Sasa_final.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-button"
+            >
+              Open PDF
+            </a>
+            <a
+              href="Project_2.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-button"
+            >
+              Open HTML
+            </a>
+          </div>
           <button onClick={handleBackToProjects} className="project-button">
             Back to Projects
           </button>
